@@ -89,7 +89,7 @@ export const ServicesSection = () => {
             Tecnologías que
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#D4AF37]"> Transforman</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl text-white/85 max-w-3xl mx-auto">
             Experiencias inmersivas que trascienden la realidad física y conectan con la consciencia colectiva
           </p>
         </motion.div>
@@ -115,7 +115,7 @@ export const ServicesSection = () => {
                 }}
                 className="group"
               >
-                <Card className="h-full bg-black/40 backdrop-blur-sm border border-white/10 hover:border-white/30 rounded-none p-8 transition-all duration-400 relative overflow-hidden">
+                <Card className="h-full bg-black/50 backdrop-blur-sm border-2 border-white/20 hover:border-white/40 rounded-none p-8 transition-all duration-400 relative overflow-hidden shadow-lg hover:shadow-glow-cyan">
                   {/* Glow Effect */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-400 blur-xl"
@@ -141,14 +141,14 @@ export const ServicesSection = () => {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-white/70 leading-relaxed">
+                    <p className="text-white/85 leading-relaxed">
                       {service.description}
                     </p>
 
                     {/* Features */}
                     <ul className="space-y-3">
                       {service.features.slice(0, 3).map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-white/60">
+                        <li key={idx} className="flex items-start gap-2 text-sm text-white/75">
                           <div
                             className="w-1.5 h-1.5 mt-2 rounded-full flex-shrink-0"
                             style={{ backgroundColor: service.color }}
@@ -160,7 +160,7 @@ export const ServicesSection = () => {
 
                     {/* Button */}
                     <Button
-                      className="w-full bg-white/5 hover:bg-white/10 text-white border border-white/20 rounded-none group/btn transition-all duration-400"
+                      className="w-full bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 rounded-none group/btn transition-all duration-400 font-semibold"
                     >
                       <span>Explorar Más</span>
                       <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />

@@ -63,7 +63,7 @@ export const PricingSection = () => {
             Elige Tu Nivel de
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#00F0FF]"> Ascensión</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl text-white/85 max-w-3xl mx-auto">
             Tres caminos hacia la manifestación de tu imperio digital
           </p>
         </motion.div>
@@ -100,9 +100,9 @@ export const PricingSection = () => {
                 )}
 
                 <Card
-                  className={`h-full bg-black/60 backdrop-blur-xl rounded-none p-8 transition-all duration-400 relative overflow-hidden group ${isRecommended
-                    ? 'border-2 border-[#00F0FF]'
-                    : 'border border-white/10 hover:border-white/30'
+                  className={`h-full bg-black/70 backdrop-blur-xl rounded-none p-8 transition-all duration-400 relative overflow-hidden group shadow-lg ${isRecommended
+                    ? 'border-2 border-[#00F0FF] shadow-glow-cyan-lg'
+                    : 'border-2 border-white/20 hover:border-white/40'
                     }`}
                 >
                   {/* Glow Effect */}
@@ -153,7 +153,7 @@ export const PricingSection = () => {
                             className="w-5 h-5 flex-shrink-0 mt-0.5"
                             style={{ color: plan.color }}
                           />
-                          <span className="text-white/80 text-sm leading-relaxed">{feature}</span>
+                          <span className="text-white/90 text-sm leading-relaxed">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -189,10 +189,10 @@ export const PricingSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <p className="text-white/60 text-lg mb-4">
+          <p className="text-white/80 text-lg mb-4 font-medium">
             Todos los planes incluyen garantía de satisfacción 100% durante 30 días
           </p>
-          <p className="text-white/50 text-sm">
+          <p className="text-white/70 text-sm">
             🌙 Opción de pago anual disponible con 2 meses gratis | Sin contratos de permanencia
           </p>
         </motion.div>

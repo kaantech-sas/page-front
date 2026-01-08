@@ -56,7 +56,7 @@ export const Navigation = () => {
               <motion.button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-white/60 hover:text-[#00F0FF] text-lg font-medium transition-colors duration-300 relative group"
+                className="text-white/80 hover:text-[#00F0FF] text-lg font-medium transition-colors duration-300 relative group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -104,7 +104,7 @@ export const Navigation = () => {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="block w-full text-left text-white/80 hover:text-[#00F0FF] text-lg font-medium py-2 transition-colors duration-300"
+              className="block w-full text-left text-white/90 hover:text-[#00F0FF] text-lg font-medium py-2 transition-colors duration-300"
             >
               {link.label}
             </button>

@@ -14,31 +14,35 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-black">
-      {/* Patrón de cuadrícula sutil */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Background Layers Container - z-index más bajo */}
+      <div className="absolute inset-0 z-0">
+        {/* Patrón de cuadrícula sutil */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                repeating-linear-gradient(0deg, transparent, transparent 1px, transparent 1px, transparent 7.6923%),
+                repeating-linear-gradient(-90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 7.6923%)
+              `,
+              backgroundSize: '100% 100%'
+            }}
+          />
+        </div>
+
+        {/* Cosmic Background Overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: `
-              repeating-linear-gradient(0deg, transparent, transparent 1px, transparent 1px, transparent 7.6923%),
-              repeating-linear-gradient(-90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 7.6923%)
-            `,
-            backgroundSize: '100% 100%'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1759392059291-905bbcd9bb98)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
           }}
         />
       </div>
 
-      {/* Cosmic Background Overlay */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1759392059291-905bbcd9bb98)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          mixBlendMode: 'screen'
-        }}
-      />
-
+      {/* Content Container - z-index más alto */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 min-h-screen">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
           {/* Left Content */}
@@ -127,15 +131,15 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative h-[600px] lg:h-[700px] w-full"
+            className="relative h-[600px] lg:h-[700px] w-full z-10"
           >
-            <div className="absolute inset-0 bg-gradient-radial from-[#00F0FF]/20 via-transparent to-transparent blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-radial from-[#00F0FF]/20 via-transparent to-transparent blur-3xl pointer-events-none" />
             <Suspense fallback={
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center relative z-10">
                 <div className="w-16 h-16 border-4 border-[#00F0FF] border-t-transparent rounded-full animate-spin" />
               </div>
             }>
-              <div style={{ width: '100%', height: '100%', overflow: 'visible', position: 'relative' }}>
+              <div className="relative z-10" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
                 <Spline
                   scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode"
                   style={{ width: '100%', height: '100%' }}
@@ -151,7 +155,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2, repeat: Infinity, repeatType: 'reverse' }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
       >
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <motion.div

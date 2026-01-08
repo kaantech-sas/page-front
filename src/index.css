@@ -1,78 +1,165 @@
-body {
-  margin: 0;
-  font-family: 'Kode Mono', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+/* ============================================
+   KAANTECH SAS - Estilos Globales Organizados
+   ============================================ */
+
+/* Tailwind CSS v4 - Import */
+@import "tailwindcss";
+
+/* Variables CSS para colores y temas */
+:root {
+  /* Colores principales - Mejorados para mayor visibilidad */
+  --color-primary-cyan: #00F0FF;
+  --color-primary-gold: #D4AF37;
+  --color-primary-black: #000000;
+  --color-primary-dark: #0A0A0A;
+  
+  /* Colores de texto - Mejorados para mejor contraste */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.85);
+  --color-text-tertiary: rgba(255, 255, 255, 0.70);
+  --color-text-muted: rgba(255, 255, 255, 0.60);
+  
+  /* Colores de fondo */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #0A0A0A;
+  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+  --color-bg-glass: rgba(0, 0, 0, 0.4);
+  
+  /* Bordes - Más visibles */
+  --color-border-primary: rgba(255, 255, 255, 0.2);
+  --color-border-secondary: rgba(255, 255, 255, 0.1);
+  --color-border-cyan: rgba(0, 240, 255, 0.4);
+  --color-border-gold: rgba(212, 175, 55, 0.4);
+  
+  /* Tipografía */
+  --font-family-primary: 'Kode Mono', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #000000;
-  color: #ffffff;
-}
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Espaciado y transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  
+  /* Efectos */
+  --shadow-glow-cyan: 0 0 20px rgba(0, 240, 255, 0.3);
+  --shadow-glow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Tipografía mejorada */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-text-primary);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p, a, span, li, label {
+  font-family: var(--font-family-primary);
+  color: var(--color-text-secondary);
+}
+
+/* Enlaces */
+a {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-cyan);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+a:hover {
+  color: var(--color-primary-gold);
+}
+
+/* Botones base - Mejorados para visibilidad */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all var(--transition-normal);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  border: none;
+  outline: none;
 }
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid var(--color-primary-cyan);
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Scrollbar personalizada - Más visible */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-gold);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-cyan);
+}
+
+/* Selección de texto - Más visible */
+::selection {
+  background: var(--color-primary-cyan);
+  color: var(--color-primary-black);
+}
+
+::-moz-selection {
+  background: var(--color-primary-cyan);
+  color: var(--color-primary-black);
 }

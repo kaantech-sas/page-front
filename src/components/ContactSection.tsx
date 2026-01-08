@@ -82,7 +82,7 @@ export const ContactSection = () => {
             Abre el Portal de
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#00F0FF]"> Comunicación</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl text-white/85 max-w-3xl mx-auto">
             Da el primer paso hacia la manifestación de tu imperio digital
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ export const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <Card className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-none p-8">
+            <Card className="bg-black/70 backdrop-blur-xl border-2 border-white/20 rounded-none p-8 shadow-lg">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -122,7 +122,7 @@ export const ContactSection = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="bg-white/5 border-white/20 text-white rounded-none focus:border-[#00F0FF] transition-all duration-300"
+                        className="bg-white/10 border-white/30 text-white rounded-none focus:border-[#00F0FF] focus:ring-2 focus:ring-[#00F0FF]/50 transition-all duration-300"
                         placeholder="Tu nombre"
                       />
                     </div>
@@ -137,7 +137,7 @@ export const ContactSection = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="bg-white/5 border-white/20 text-white rounded-none focus:border-[#00F0FF] transition-all duration-300"
+                        className="bg-white/10 border-white/30 text-white rounded-none focus:border-[#00F0FF] focus:ring-2 focus:ring-[#00F0FF]/50 transition-all duration-300"
                         placeholder="tu@email.com"
                       />
                     </div>
@@ -155,7 +155,7 @@ export const ContactSection = () => {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="bg-white/5 border-white/20 text-white rounded-none focus:border-[#00F0FF] transition-all duration-300"
+                        className="bg-white/10 border-white/30 text-white rounded-none focus:border-[#00F0FF] focus:ring-2 focus:ring-[#00F0FF]/50 transition-all duration-300"
                         placeholder="+57 XXX XXX XXXX"
                       />
                     </div>
@@ -169,7 +169,7 @@ export const ContactSection = () => {
                         type="text"
                         value={formData.company}
                         onChange={handleChange}
-                        className="bg-white/5 border-white/20 text-white rounded-none focus:border-[#00F0FF] transition-all duration-300"
+                        className="bg-white/10 border-white/30 text-white rounded-none focus:border-[#00F0FF] focus:ring-2 focus:ring-[#00F0FF]/50 transition-all duration-300"
                         placeholder="Nombre de tu empresa"
                       />
                     </div>
@@ -186,7 +186,7 @@ export const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="bg-white/5 border-white/20 text-white rounded-none focus:border-[#00F0FF] transition-all duration-300 resize-none"
+                      className="bg-white/10 border-white/30 text-white rounded-none focus:border-[#00F0FF] focus:ring-2 focus:ring-[#00F0FF]/50 transition-all duration-300 resize-none"
                       placeholder="Cuéntanos sobre tu proyecto y objetivos..."
                     />
                   </div>
@@ -212,19 +212,19 @@ export const ContactSection = () => {
             className="space-y-8"
           >
             {/* Contact Methods */}
-            <Card className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-none p-8">
+            <Card className="bg-black/50 backdrop-blur-sm border-2 border-white/20 rounded-none p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-white mb-6">Conexión Directa</h3>
               <div className="space-y-6">
                 <a
                   href="tel:+573134367623"
-                  className="flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00F0FF]/50 rounded-none transition-all duration-300 group"
+                  className="flex items-center gap-4 p-4 bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-[#00F0FF]/70 rounded-none transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 flex items-center justify-center bg-[#00F0FF]/20 border border-[#00F0FF] rounded-none group-hover:scale-110 transition-transform duration-300">
                     <Phone className="w-6 h-6 text-[#00F0FF]" />
                   </div>
                   <div>
-                    <div className="text-white/60 text-sm">Teléfono</div>
-                    <div className="text-white font-semibold text-lg">+57 313-436-7623</div>
+                    <div className="text-white/75 text-sm font-medium">Teléfono</div>
+                    <div className="text-white font-bold text-lg">+57 313-436-7623</div>
                   </div>
                 </a>
 
@@ -236,8 +236,8 @@ export const ContactSection = () => {
                     <Mail className="w-6 h-6 text-[#D4AF37]" />
                   </div>
                   <div>
-                    <div className="text-white/60 text-sm">Email</div>
-                    <div className="text-white font-semibold text-lg">kantech34@gmail.com</div>
+                    <div className="text-white/75 text-sm font-medium">Email</div>
+                    <div className="text-white font-bold text-lg">kantech34@gmail.com</div>
                   </div>
                 </a>
 
@@ -251,17 +251,17 @@ export const ContactSection = () => {
                     <MessageCircle className="w-6 h-6 text-[#25D366]" />
                   </div>
                   <div>
-                    <div className="text-white/60 text-sm">WhatsApp</div>
-                    <div className="text-white font-semibold text-lg">Inicia conversación</div>
+                    <div className="text-white/75 text-sm font-medium">WhatsApp</div>
+                    <div className="text-white font-bold text-lg">Inicia conversación</div>
                   </div>
                 </a>
               </div>
             </Card>
 
             {/* Hours */}
-            <Card className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-none p-8">
+            <Card className="bg-black/50 backdrop-blur-sm border-2 border-white/20 rounded-none p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-white mb-6">Horario de Energía</h3>
-              <div className="space-y-3 text-white/70">
+              <div className="space-y-3 text-white/85">
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span>Lunes - Viernes</span>
                   <span className="text-[#00F0FF] font-semibold">8:00 AM - 6:00 PM</span>
